@@ -4,8 +4,6 @@ saved_string = ''
 
 
 def remove_letter(): #Remove a selected letter from a string
-    print "\nRemove Letter"
-
     global saved_string
 
     while True:
@@ -19,24 +17,26 @@ def remove_letter(): #Remove a selected letter from a string
 
 
 def num_compare(): #Compare 2 numbers to determine the larger
-    print "\nNum Compare"
-
     input_one = int(raw_input("Enter first number: "))
     input_two = int(raw_input("Enter second number: "))
 
-    print "The largest of numbers of %d and %d is: %d" % (input_one, input_two, max(input_one, input_two))
+    if input_one == input_two:
+        print "Numbers are equal!"
+    else:
+        print "The largest of numbers of %d and %d is: %d" % (input_one, input_two, max(input_one, input_two))
 
 
 def print_string(): #Print the previously stored string
-    print "\nPrint String"
-
     print saved_string
 
 
 def calculator(): #Basic Calculator (addition, subtraction, multiplication, division)
-    print "\nCalculator"
+    operator_dict = {'+': operator.add, '-': operator.sub, '*': operator.mul, '/': operator.div}
+    num1 = int(raw_input("Input first number: "))
+    sign = str(raw_input("Operator: "))
+    num2 = int(raw_input("Input second number: "))
 
-    return
+    print operator_dict[sign](num1, num2)
 
 
 def accept_and_store(): #Accept and store a string
